@@ -1,0 +1,14 @@
+@import url("../../styles/styles.css");
+
+.contenedor-carrito{
+    display: flex;
+    background-color:  var(--clr-white);
+    align-items: center;
+    border-radius: .7rem;
+    width: 65px;
+    margin-left: 50px;
+    
+}
+.logo-carrito{
+    max-width:40px;
+}

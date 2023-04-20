@@ -1,0 +1,65 @@
+@import url("../../styles/styles.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+
+.logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logos-imagen{
+    max-width: 15%;
+}
+
+.logos-nombre{
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+}
+
+.logos-parrafo{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+}
+
+nav {
+    background-color: var(--clr-main);
+    display: flex;
+    justify-content:center;
+    padding: .2rem;
+}
+.categorias{
+    display: flex;
+    list-style-type: none;
+    gap: 2rem;
+    justify-content: space-between;
+    font-family: 'Raleway', sans-serif;
+    align-items: center;
+}
+
+.categorias-link {
+    padding: .8rem;
+    color: var(--clr-black);
+    font-weight: 450;
+}
+
+
+.categorias-link:hover{
+    background-color: var(--clr-main-dark);
+    color: var(--clr-white);
+    padding: .8rem;
+    transition: background-color .2s, color .2s;
+}
