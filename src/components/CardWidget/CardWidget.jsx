@@ -1,11 +1,11 @@
-import carrito from './assets/carrito.png'
+import cart from './assets/carrito.png'
 import './CardWidget.css';
 
-const CardWidget =  ({contador}) => {
+const CardWidget =  ({counterCart}) => {
     return(
-        <div className='contenedor-carrito'>
-            <img className='logo-carrito' src={carrito} alt="logo de carrito de compras" />
-            <p>{contador}</p>
+        <div className='container-cart'>
+            <img className='cart-logo' src={cart} alt="logo de carrito de compras" />
+            <p>{counterCart}</p>
         </div>
     )
 }

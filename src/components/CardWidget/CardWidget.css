@@ -1,6 +1,6 @@
 @import url("../../styles/styles.css");
 
-.contenedor-carrito{
+.container-cart{
     display: flex;
     background-color:  var(--clr-white);
     align-items: center;
@@ -9,6 +9,6 @@
     margin-left: 50px;
     
 }
-.logo-carrito{
+.cart-logo{
     max-width:40px;
 }

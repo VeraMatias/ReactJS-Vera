@@ -6,19 +6,19 @@ const NavBar =  () => {
     return(
         <header>
             <div className="logos">
-                <img className="logos-imagen" src = {logo} alt="Habia Una Vez Logo" />
-                <h2 className="logos-nombre">Habia Una Vez</h2>
-                <p className="logos-parrafo">-Showroom-</p>
+                <img className="logos-image" src = {logo} alt="Habia Una Vez Logo" />
+                <h2 className="logos-name">Habia Una Vez</h2>
+                <p className="logos-pgp">-Showroom-</p>
             </div>
 
             <nav>
-                <ul className="categorias">
-                    <li><a className="categorias-link" href="#">Todos los productos</a></li>
-                    <li><a className="categorias-link" href="#">Abrigos</a></li>
-                    <li><a className="categorias-link" href="#">Camisetas</a></li>
-                    <li><a className="categorias-link" href="#">Pantalones</a></li>
+                <ul className="categories">
+                    <li><a className="categories-link" href="#">Todos los productos</a></li>
+                    <li><a className="categories-link" href="#">Abrigos</a></li>
+                    <li><a className="categories-link" href="#">Camisetas</a></li>
+                    <li><a className="categories-link" href="#">Pantalones</a></li>
                 </ul>
-                <CardWidget contador = {15}/>
+                <CardWidget counterCart = {15}/>
             </nav>
         </header>
     )
