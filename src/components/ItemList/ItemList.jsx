@@ -8,7 +8,7 @@ const ItemList = ({itemList}) => {
             <div className="container-items">
                 {!itemList.length && "SKELETON"}
                 {itemList.map(item => (
-                    <Item item={item} />
+                    <Item key={item.id} item={item} />
                 ))}
             </div>
         </>

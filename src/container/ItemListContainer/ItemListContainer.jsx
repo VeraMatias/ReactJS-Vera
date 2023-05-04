@@ -23,7 +23,7 @@ const ItemListContainer =  ({greeting}) => {
 
     return(
         <>
-            <div style={{textAlign: "center"}}>
+            <div style={{textAlign: "center", marginTop: "1rem", marginBottom: "1rem"}}>
                 <p>{greeting}</p>
             </div>
             <ItemList itemList ={itemList}/>
