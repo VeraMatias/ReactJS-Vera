@@ -1,15 +1,17 @@
-
+import ItemCount from '../../components/ItemCount/ItemCount';
 
 const ItemDetail =  ({product}) => {
     return(
         <>
-            <h1>{product.id}</h1>
-            <h1>{product.nombre}</h1>
-            <h1>{product.imagen}</h1>
-            <h1>{product.descripcion}</h1>
-            <h1>{product.categoria}</h1>
-            <h1>{product.precio}</h1>
-            <h1>{product.stock}</h1>
+            <div className="container-details">
+                <div className="details-product">
+                    <h2 className='product-name'>{product.nombre}</h2>
+                    <img className="product-image" src={product.imagen} alt="imagen del producto" />
+                    <p className='product-description'>{product.descripcion}</p>
+                    <p className='product-price'>{product.precio}</p>
+                </div>
+                <ItemCount  initial={0} stock={4} onAdd={(count) => console.log("Cantidad:",count)}/>
+            </div>
         </>
     )
 }
