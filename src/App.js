@@ -11,7 +11,7 @@ function App() {
       <NavBar />
       <ItemListContainer greeting={"Bienvenidos a Habia Una Vez"} />
 
-      <ItemDetailContainer productId = {"abrigo-02"} />
+      <ItemDetailContainer productId = {"abrigo-01"} />
 
     </>
   );

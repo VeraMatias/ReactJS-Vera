@@ -10,7 +10,7 @@ const ItemDetail =  ({product}) => {
                     <p className='product-description'>{product.descripcion}</p>
                     <p className='product-price'>{product.precio}</p>
                 </div>
-                <ItemCount  initial={0} stock={4} onAdd={(count) => console.log("Cantidad:",count)}/>
+                <ItemCount  initial={0} stock={product.stock} onAdd={(count) => console.log("Cantidad:",count)}/>
             </div>
         </>
     )
