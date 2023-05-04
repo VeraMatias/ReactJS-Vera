@@ -1,0 +1,54 @@
+@import url("../../styles/styles.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+.card-product{
+    border-radius: 1rem;
+    box-shadow: 3px 3px 10px;
+}
+
+.product-image{
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+.product-details{
+    padding: .2rem;
+}
+
+.details-text{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.details-name{
+    font-weight: 600;
+    font-size: large;
+}
+
+.details-price{
+    font-weight: 800;
+    font-size: large;
+}
+
+.details-more{
+    background-color: var(--clr-main);
+    width:100%;
+    border-width: 0px;
+    border-bottom-left-radius: 1rem ;
+    border-bottom-right-radius: 1rem;
+    padding: .5rem;
+    font-size: large;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.details-more:hover{
+
+}
