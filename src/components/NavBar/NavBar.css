@@ -39,8 +39,9 @@ nav {
     background-color: var(--clr-main);
     display: flex;
     justify-content:center;
-    padding: .2rem;
+    
 }
+
 .categories{
     display: flex;
     list-style-type: none;
