@@ -10,14 +10,18 @@ const ItemListContainer =  ({greeting}) => {
 
     //Obtencion de Parametros de URL
     const {categoryID} = useParams()
-    console.log(categoryID)
+
     //useEffect para usar Promise
     useEffect(() => {
 
         const productList = new Promise((resolve, reject) =>{
             setTimeout(() =>{
                 //resolve(products)
-                categoryID === "*" ? resolve(products) : resolve(products.filter(product => product.categoria == categoryID))  
+                if (!categoryID){
+                    resolve(products)
+                }else{
+                    categoryID === "*" ? resolve(products) : resolve(products.filter(product => product.categoria == categoryID)) 
+                }
             },2000);
         });
 
