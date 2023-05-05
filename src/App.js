@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path = "/" element={<ItemListContainer greeting={"Bienvenidos a Habia Una Vez"} />}/>
         <Route path = "/category/:categoryID" element={<ItemListContainer greeting={"Bienvenidos a Habia Una Vez"} />}/>
-        <Route path = "/item/:id" element={<ItemDetailContainer productId = {"abrigo-01"} />}/>
+        <Route path = "/item/:itemID" element={<ItemDetailContainer/>}/>
         <Route path = "*" element={"error 404"}/>
       </Routes>
     
