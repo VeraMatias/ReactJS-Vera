@@ -15,7 +15,7 @@ const Item = ({item}) => {
                 {/* <button className="details-more btn1">Mas Info</button> */}
 
                 <Link to={`/item/${item.id}`} >
-                    <button className = {"details-more btn1"}>Mas Info</button>
+                    <button className = {"details-more"}>Mas Info</button>
                 </Link>
 
             </div>
