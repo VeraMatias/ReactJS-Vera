@@ -1,0 +1,53 @@
+@import url("../../styles/styles.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+.product-name{
+    text-align: center;
+    margin: 1rem;
+}
+.container-details {
+    display: flex;
+    gap: 2rem;
+}
+
+.details-product-left{
+    margin-left: 1rem;
+}
+
+.details-product-right{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-description{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.description-title{
+    font-weight: 600;
+    font-size: large;
+}
+
+.product-price{
+    width: max-content;
+    font-weight: 600;
+    font-size: large;
+    color: var(--clr-main-dark);
+    border: 1px solid ;
+    border-radius: .5rem;
+    padding: .5rem;
+}
+
+.count-title{
+    font-weight: 600;
+    font-size: large;
+    margin-top: 3rem;
+}
