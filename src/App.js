@@ -3,15 +3,23 @@ import NavBar from './components/NavBar/Navbar';
 
 import ItemListContainer from './container/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './container/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 function App() {
   return (
     <>
+    <BrowserRouter>
       <NavBar />
-      <ItemListContainer greeting={"Bienvenidos a Habia Una Vez"} />
+      <Routes>
+        <Route path = "/" element={<ItemListContainer greeting={"Bienvenidos a Habia Una Vez"} />}/>
+        <Route path = "/category/:categoryID" element={<ItemListContainer greeting={"Bienvenidos a Habia Una Vez"} />}/>
+        <Route path = "/item/:id" element={<ItemDetailContainer productId = {"abrigo-01"} />}/>
+        <Route path = "*" element={"error 404"}/>
+      </Routes>
+    
+    </BrowserRouter>
 
-      <ItemDetailContainer productId = {"abrigo-01"} />
 
     </>
   );
