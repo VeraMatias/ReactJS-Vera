@@ -1,0 +1,12 @@
+.skeleton-image{
+    max-width: 100%;
+    height: 20rem;
+    border-radius: 1rem;
+}
+
+.skeleton-text{
+    margin-top: .5rem;
+    max-width: 100%;
+    height: 1.5rem;
+    border-radius: 1rem;
+}
