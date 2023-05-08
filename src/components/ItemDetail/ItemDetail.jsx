@@ -16,7 +16,8 @@ const ItemDetail =  ({product}) => {
                         {!product.precio ? <Skeleton width={"10rem"} height={"2rem"}/> : <p className='product-price'>Precio: ${product.precio}</p> }
                     </div>
                     <p className='count-title'>Agregar al carrito</p>
-                    {!product.stock ? <Skeleton height={"2rem"}/> : <ItemCount  initial={0} stock={product.stock} onAdd={(count) => console.log("Cantidad:",count)}/>}
+                    {console.log(product.stock)}
+                    {product.stock == undefined ? <Skeleton height={"2rem"}/> : <ItemCount  initial={0} stock={product.stock} onAdd={(count) => console.log("Cantidad:",count)}/>}
                 </div>
             </div>
         </>
