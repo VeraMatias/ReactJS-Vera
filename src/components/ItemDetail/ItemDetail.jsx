@@ -8,7 +8,7 @@ const ItemDetail =  ({product}) => {
         <>
             <h2 className='product-name'>{product.nombre || <Skeleton/>}</h2>
             <div className="container-details">
-                {!product.imagen ? <Skeleton height={500} width={700}/> : <img className="product-image" src={product.imagen} alt="imagen del producto" />}
+                {!product.imagen ? <Skeleton height={500} width={700}/> : <img className="product-detail-image" src={product.imagen} alt="imagen del producto" />}
                 <div className="details-product-right">
                     <div className='container-description'>
                         <p className='description-title'>Descripción del Producto</p>
