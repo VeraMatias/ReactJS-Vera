@@ -1,12 +1,10 @@
 import NavBar from './components/NavBar/Navbar';
-
-
 import ItemListContainer from './container/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './container/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-
 function App() {
+
   return (
     <>
     <BrowserRouter>
@@ -17,10 +15,7 @@ function App() {
         <Route path = "/item/:itemID" element={<ItemDetailContainer/>}/>
         <Route path = "*" element={"error 404"}/>
       </Routes>
-    
     </BrowserRouter>
-
-
     </>
   );
 }
