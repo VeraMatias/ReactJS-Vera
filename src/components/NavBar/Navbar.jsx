@@ -3,8 +3,15 @@ import CardWidget from "../CardWidget/CardWidget"
 import './NavBar.css';
 import logo from './assets/logo.png'
 
+import {CartContext} from '../../context/CartContext'
+import { useContext } from 'react';
+
 const NavBar =  () => {
+
+    const {quantityCart} = useContext(CartContext)
+
     return(
+
         <header>
             <div className="logos">
                 <img className="logos-image" src = {logo} alt="Habia Una Vez Logo" />
@@ -18,12 +25,8 @@ const NavBar =  () => {
                     <NavLink to={"/category/Abrigos"} className={"categories-link"}>Abrigos </NavLink>
                     <NavLink to={"/category/Camisetas"} className={"categories-link"}>Camisetas </NavLink>
                     <NavLink to={"/category/Pantalones"} className={"categories-link"}>Pantalones </NavLink>
-                    {/* <li><a className="categories-link" href="#">Todos los productos</a></li>
-                    <li><a className="categories-link" href="#">Abrigos</a></li>
-                    <li><a className="categories-link" href="#">Camisetas</a></li>
-                    <li><a className="categories-link" href="#">Pantalones</a></li> */}
                 </ul>
-                <CardWidget counterCart = {15}/>
+                <CardWidget counterCart = {quantityCart()}/>
             </nav>
         </header>
     )
