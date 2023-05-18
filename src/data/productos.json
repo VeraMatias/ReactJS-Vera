@@ -86,7 +86,8 @@
         "imagen": "/img/camisetas/05.jpg",
         "descripcion": "Descripcion de la camiseta. Aqui estaria la descripcion del mismo.",
         "categoria": "Camisetas",
-        "precio": 7500
+        "precio": 7500,
+        "stock": 3
     },
     {
         "id": "camiseta-06",
