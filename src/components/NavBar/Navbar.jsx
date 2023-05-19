@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import CardWidget from "../CardWidget/CardWidget"
 import './NavBar.css';
 import logo from './assets/logo.png'
@@ -24,9 +24,12 @@ const NavBar =  () => {
                     <NavLink to={"/category/*"} className={"categories-link"}>Todos los productos </NavLink>
                     <NavLink to={"/category/Abrigos"} className={"categories-link"}>Abrigos </NavLink>
                     <NavLink to={"/category/Camisetas"} className={"categories-link"}>Camisetas </NavLink>
-                    <NavLink to={"/category/Pantalones"} className={"categories-link"}>Pantalones </NavLink>
+                    <NavLink to={"/category/Pantalones"} className={"categories-link right-link"}>Pantalones </NavLink>
                 </ul>
-                {quantityCart() > 0 &&  <CardWidget counterCart = {quantityCart()}/>}
+                <Link to={"/cart"}>
+                    {quantityCart() > 0 &&  <CardWidget counterCart = {quantityCart()}/>}
+                </Link>
+                
             </nav>
         </header>
     )

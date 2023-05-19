@@ -1,0 +1,107 @@
+@import url("../../styles/styles.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+.title{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.conteiner-cart{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+}
+
+.cart-item{
+    background-color: var(--clr-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
+.item-img{
+    width: 4rem;
+    border-radius: 1rem;
+}
+
+.cart-item span{
+    font-size: .9rem;
+}
+
+.cart-item h3{
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.btn-remove{
+    border: 0;
+    background-color:transparent;
+    color: var(--clr-red);
+    cursor: pointer;
+    margin-right: .5rem
+}
+
+.cart-actions{
+    display: flex;
+    justify-content:space-between;
+}
+
+.btn-clear{
+    background-color: var(--clr-gray);
+    padding: .6rem;
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    border-radius: .75rem;
+    border-color: var(--clr-gray);
+    border-style: solid;
+    text-transform: uppercase;
+    color: var(--clr-main-dark);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cart-actions-right{
+    display: flex;
+}
+
+.cart-actions-right-total{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--clr-gray);
+    padding: .6rem;
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    border-top-left-radius: .75rem;
+    border-bottom-left-radius: .75rem;
+    text-transform: uppercase;
+    color: var(--clr-main-dark);
+    font-weight: 600;
+}
+
+.btn-buy{
+    background-color: var(--clr-main-dark);
+    padding: .6rem;
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    border-top-right-radius: .75rem;
+    border-bottom-right-radius: .75rem;
+    border-color: var(--clr-main-dark);
+    border-style: solid;
+    text-transform: uppercase;
+    color: var(--clr-gray);
+    font-weight: 600;
+    cursor: pointer;
+}
