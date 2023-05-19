@@ -39,5 +39,11 @@ export const useCart = () =>{
         return (quantityTotal)
     }
 
-    return {cart, addItem, removeItem, clearCart, quantityCart}
+    const totalOrder = () =>{
+        let totalOrder = 0
+        cart.forEach(item => totalOrder += item.quantity * item.item.precio)
+        return (totalOrder)
+    }
+
+    return {cart, addItem, removeItem, clearCart, quantityCart, totalOrder}
 }

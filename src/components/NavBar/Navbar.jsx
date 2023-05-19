@@ -26,7 +26,7 @@ const NavBar =  () => {
                     <NavLink to={"/category/Camisetas"} className={"categories-link"}>Camisetas </NavLink>
                     <NavLink to={"/category/Pantalones"} className={"categories-link"}>Pantalones </NavLink>
                 </ul>
-                <CardWidget counterCart = {quantityCart()}/>
+                {quantityCart() > 0 &&  <CardWidget counterCart = {quantityCart()}/>}
             </nav>
         </header>
     )
