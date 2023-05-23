@@ -1,0 +1,40 @@
+@import url("../../styles/styles.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+.cart-item{
+    background-color: var(--clr-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
+.item-img{
+    width: 4rem;
+    border-radius: 1rem;
+}
+
+.cart-item span{
+    font-size: .9rem;
+}
+
+.cart-item h3{
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.btn-remove{
+    border: 0;
+    background-color:transparent;
+    color: var(--clr-red);
+    cursor: pointer;
+    margin-right: .5rem
+}

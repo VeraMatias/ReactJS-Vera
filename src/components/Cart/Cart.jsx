@@ -2,6 +2,8 @@ import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 
 import './Cart.css'
+import { ItemCart } from "../ItemCart/ItemCart"
+import { ActionsCart } from "../ActionsCart/ActionsCart"
 
 export const Cart = () =>{
     const {cart, totalOrder, removeItem, clearCart} = useContext(CartContext)
@@ -17,43 +19,14 @@ export const Cart = () =>{
 
                 <h2 className="title">Carrito de Compra</h2>
                 <div className="conteiner-cart">
-                    <div className="cart-item">
-                        <img className="item-img" src="/img/camisetas/03.jpg" alt="" />
-                        <div className="item-name">
-                            <span>Artículo</span>
-                            <h3>NOMBRE</h3>
-                        </div>
-                        <div className="item-quantity">
-                            <span>Cantidad</span>
-                            <h3>123</h3>
-                        </div>
-                        <div className="item-price">
-                            <span>Precio</span>
-                            <h3>$123</h3>
-                        </div>
-                        <div className="item-subtotal">
-                            <span>Subtotal</span>
-                            <h3>$123</h3>
-                        </div>
-                        <button className="btn-remove"><i className="bi bi-trash3-fill"></i></button>
-                    </div>
-
-                    <div className="cart-actions">
-                        <div className="cart-actions-left">
-                            <button className="btn-clear">Vaciar carrito</button>
-                        </div>
-                        <div className="cart-actions-right">
-                            <div className="cart-actions-right-total">
-                                <p>Total: </p>
-                                <p>$3000</p>
-                            </div>
-                            <button className="btn-buy">Comprar Ahora</button>
-                        </div>
-                    </div>
+                    {
+                        cart.map(product => (
+                            <ItemCart key={product.item.id} item ={product.item} quantity={product.quantity} remove={(itemID) => removeItem(itemID)}/>
+                        ))
+                    }
+                    <ActionsCart total = {totalOrder()} clear = {() => clearCart()}/>
                 </div>
             </>
             )
     }
-
-
 }
