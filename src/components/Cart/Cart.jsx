@@ -4,13 +4,20 @@ import { CartContext } from "../../context/CartContext"
 import './Cart.css'
 import { ItemCart } from "../ItemCart/ItemCart"
 import { ActionsCart } from "../ActionsCart/ActionsCart"
+import { Link } from "react-router-dom"
 
 export const Cart = () =>{
     const {cart, totalOrder, removeItem, clearCart} = useContext(CartContext)
 
     if (!cart.length){
-        return(           
-            <h1>ESTE ES EL COMPONENTE CART VACIO</h1>
+        return(   
+            <>
+                <div className="container-no-product">
+                    <h2 className="title">¡Tu carrito esta vacio!</h2>
+                    <Link to={"/category/*"} className={"btn-products"}>Comprar Ahora </Link>
+                </div>
+            </>        
+
         )
     }else{
         return(
