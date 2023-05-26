@@ -11,13 +11,10 @@ export const Cart = () =>{
 
     if (!cart.length){
         return(   
-            <>
-                <div className="container-no-product">
-                    <h2 className="title">¡Tu carrito esta vacio!</h2>
-                    <Link to={"/category/*"} className={"btn-products"}>Comprar Ahora </Link>
-                </div>
-            </>        
-
+            <div className="container-no-product">
+                <h2 className="title">¡Tu carrito esta vacio!</h2>
+                <Link to={"/category/*"} className={"btn-products"}>Comprar Ahora </Link>
+            </div>
         )
     }else{
         return(
@@ -25,10 +22,10 @@ export const Cart = () =>{
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"></link>
 
                 <h2 className="title">Carrito de Compra</h2>
-                <div className="conteiner-cart">
+                <div className="container-cart">
                     {
                         cart.map(product => (
-                            <ItemCart key={product.item.id} item ={product.item} quantity={product.quantity} remove={(itemID) => removeItem(itemID)}/>
+                            <ItemCart key={product.item.id} item ={product.item} quantity={product.quantity} BtnRemove = {true} remove={(itemID) => removeItem(itemID)}/>
                         ))
                     }
                     <ActionsCart total = {totalOrder()} clear = {() => clearCart()}/>

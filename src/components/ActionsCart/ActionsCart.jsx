@@ -1,4 +1,5 @@
 import './ActionsCart.css'
+import { Link } from "react-router-dom"
 
 export const ActionsCart = ({total, clear}) =>{
     return(
@@ -11,7 +12,9 @@ export const ActionsCart = ({total, clear}) =>{
                 <p>Total: </p>
                 <p>${total}</p>
             </div>
-            <button className="btn-buy">Comprar Ahora</button>
+            <Link to={"/checkout"}>
+                <button className="btn-buy">Comprar Ahora</button>
+            </Link>
         </div>
     </div>
     )

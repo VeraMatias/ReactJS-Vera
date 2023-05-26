@@ -33,7 +33,7 @@
     cursor: pointer;
 }
 
-.conteiner-cart{
+.container-cart{
     display: flex;
     flex-direction: column;
     gap: 2rem;

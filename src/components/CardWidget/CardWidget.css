@@ -1,6 +1,6 @@
 @import url("../../styles/styles.css");
 
-.container-cart{
+.container-cart-navbar{
     display: flex;
     background-color:  var(--clr-white);
     align-items: center;

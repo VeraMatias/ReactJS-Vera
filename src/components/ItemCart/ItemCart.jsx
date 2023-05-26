@@ -1,7 +1,7 @@
 import './ItemCart.css'
 import {Link} from "react-router-dom"
 
-export const ItemCart = ({item, quantity, remove}) =>{
+export const ItemCart = ({item, quantity, remove, BtnRemove}) =>{
 
     return(
         <div className="cart-item">
@@ -24,7 +24,9 @@ export const ItemCart = ({item, quantity, remove}) =>{
                 <span>Subtotal</span>
                 <h3>${item.precio * quantity}</h3>
             </div>
+            {BtnRemove &&
             <button className="btn-remove" onClick={() => remove(item.id)}><i className="bi bi-trash3-fill"></i></button>
+            }
         </div>
     )
 }
