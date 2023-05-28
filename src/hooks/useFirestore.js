@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
-import { getFirestore, collection, addDoc, getDocs, query, where} from "firebase/firestore"
+import { getFirestore, collection, addDoc, getDocs, query, where, doc, getDoc} from "firebase/firestore"
 
 
 export const useFirestore = () =>{
@@ -78,8 +78,19 @@ export const useFirestore = () =>{
                     )))
             })
         }
-
     }
 
-    return {sendOrder, getCollection}
+    const getDocument = (productID, setItemProduct) =>{
+        const db = getFirestore()
+
+        const q = doc(db,"items",productID)
+        getDoc(q).then((snapshot) =>{
+            snapshot === 0 ?
+                setItemProduct([])
+            :
+                setItemProduct({id: snapshot.id, ...snapshot.data()})
+        })
+    }
+
+    return {sendOrder, getCollection, getDocument}
 } 
