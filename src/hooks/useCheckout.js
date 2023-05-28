@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useFirestore } from './useFirestore';
 
 export const useCheckout = () =>{
 
@@ -14,9 +15,11 @@ export const useCheckout = () =>{
         setInputs(values => ({...values, [name]: value}))
     }
 
+    const {sendOrder}  = useFirestore()
+    
     const handleSubmit = (event) =>{
         event.preventDefault()
-        console.log(inputs)
+        sendOrder(inputs)
     }
 
     const inputValues = [

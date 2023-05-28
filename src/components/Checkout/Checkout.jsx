@@ -1,6 +1,6 @@
 
 import { CheckoutInfoUser } from '../CheckoutInfoUser/CheckoutInfoUser'
-import { useContext } from "react"
+import { useContext} from "react"
 import { CartContext } from "../../context/CartContext"
 import { ItemCart } from "../ItemCart/ItemCart"
 
@@ -9,8 +9,9 @@ import './Checkout.css'
 export const Checkout = () => {
 
     const {cart, removeItem} = useContext(CartContext)
+
     return(
-        <>
+        <>    
             <div className="container-checkout">
                 <CheckoutInfoUser/>
                 <div className="container-checkout-list">
@@ -22,7 +23,6 @@ export const Checkout = () => {
                         ))
                     }
                     </div>
-
                 </div>
             </div>
         </>
