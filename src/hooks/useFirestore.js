@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
-import { getFirestore, collection, addDoc} from "firebase/firestore"
+import { getFirestore, collection, addDoc, getDocs, query, where} from "firebase/firestore"
 
 
 export const useFirestore = () =>{
@@ -45,5 +45,41 @@ export const useFirestore = () =>{
         addDoc(orderCollection, order).then(({id}) => alert(`Su orden fue generada a traves del ID ${id}`))
     }
 
-    return {sendOrder}
+    const getCollection = (nameCategory, setList,all) =>{
+        const db = getFirestore()
+        
+        if (all){
+            const allproducts = collection(db, "items")
+            getDocs(allproducts).then((snapshot) =>{
+                snapshot === 0 ?
+                    setList([])
+                :
+                    setList(snapshot.docs.map((doc) => (
+                        {
+                            id: doc.id,
+                            ...doc.data()
+                        }
+                    )))
+            })
+        }else{
+            const q = query(
+                collection(db, "items"),
+                where("categoria", "==", nameCategory)
+            )
+            getDocs(q).then((snapshot) =>{
+                snapshot === 0 ?
+                    setList([])
+                :
+                    setList(snapshot.docs.map((doc) => (
+                        {
+                            id: doc.id,
+                            ...doc.data()
+                        }
+                    )))
+            })
+        }
+
+    }
+
+    return {sendOrder, getCollection}
 } 

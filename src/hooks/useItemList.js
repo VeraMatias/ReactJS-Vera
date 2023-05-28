@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
+import { useFirestore } from "./useFirestore";
 
 export const useItemList = (products) =>{
 
@@ -9,24 +10,16 @@ export const useItemList = (products) =>{
     //Obtencion de Parametros de URL
     const {categoryID} = useParams()
 
+    //Obtencion de funcion de firestore
+    const {getCollection} = useFirestore() 
+
     //useEffect para usar Promise
-    useEffect(() => {
-
-        const productList = new Promise((resolve, reject) =>{
-            setTimeout(() =>{
-                //resolve(products)
-                if (!categoryID){
-                    resolve(products)
-                }else{
-                    categoryID === "*" ? resolve(products) : resolve(products.filter(product => product.categoria == categoryID)) 
-                }
-            },2000);
-        });
-
-        productList.then(result => setItemList(result))
-        productList.catch(result => setItemList([]))
-
-    }, [categoryID]);
+    useEffect(() =>{
+        categoryID === "*"?
+        getCollection(categoryID,setItemList,true)
+        :
+        getCollection(categoryID,setItemList,false)
+    },[categoryID])
 
     return {itemList}
 
