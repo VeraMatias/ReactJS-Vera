@@ -15,15 +15,10 @@ export const useItemList = (products) =>{
 
     //useEffect para usar Promise
     useEffect(() =>{
-
-        if (categoryID != undefined){
-            categoryID === "*"?
-            getCollection(categoryID,setItemList,true)
-            :
-            getCollection(categoryID,setItemList,false)
-        }else{
-            getCollection(categoryID,setItemList,true)
-        }
+        categoryID?
+        getCollection(categoryID,setItemList,false)
+        :
+        getCollection(categoryID,setItemList,true)
 
     },[categoryID])
 
