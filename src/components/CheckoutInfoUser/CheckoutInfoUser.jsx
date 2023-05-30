@@ -3,12 +3,11 @@ import './CheckoutInfoUser.css'
 
 export const CheckoutInfoUser = () =>{
 
-    const {handleChange, handleSubmit, inputValues} = useCheckout()
+    const {handleChange, handleSubmit, inputValues,isEmailOk} = useCheckout()
 
     return(
         <div className="container-checkout-user">
         <h2>Información del Usuario</h2>
-        {/*<form onSubmit={handleSubmit()}>*/}
         <form onSubmit={handleSubmit}>
             {inputValues.map(input =>{
                 return(                        
@@ -25,7 +24,14 @@ export const CheckoutInfoUser = () =>{
                     <label htmlFor={input.htmlFor} className="form-label">{input.text}</label>
                     </div>)
                 })}
-            <button className='checkout-btn-buy' type="submit">Confirmar compra</button>
+            {   isEmailOk()?
+                <button className='checkout-btn-buy' type="submit">Confirmar compra</button>
+                :
+                <>
+                    <button className='checkout-btn-buy' disabled type="submit">Confirmar compra</button>
+                    <p className='text-error'>Los emails no coinciden</p>
+                </>
+            }
         </form>
     </div>
     )

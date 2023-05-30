@@ -97,3 +97,15 @@
     border-color: var(--clr-main);
     color: var(--clr-black);
 }
+
+.checkout-btn-buy:disabled{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: no-drop;
+}
+
+.text-error{
+    font-style: italic;
+    color: red;
+}

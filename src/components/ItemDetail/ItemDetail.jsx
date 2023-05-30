@@ -13,6 +13,8 @@ const ItemDetail =  ({product}) => {
     
     return(
         <>
+        {!product.nombre ? <h2 className='text-nonexist'>Producto Inexistente</h2> :
+            <>
             <h2 className='product-name'>{product.nombre || <Skeleton/>}</h2>
             <div className="container-details">
                 {!product.imagen ? <Skeleton height={500} width={700}/> : <img className="product-detail-image" src={product.imagen} alt="imagen del producto" />}
@@ -26,6 +28,8 @@ const ItemDetail =  ({product}) => {
                     {product.stock === undefined ? <Skeleton height={"2rem"}/> : <ItemCount  initial={0} stock={availableStock} onAdd={(count) => addItem(product,count)}/>}
                 </div>
             </div>
+            </>
+        }
         </>
     )
 }
