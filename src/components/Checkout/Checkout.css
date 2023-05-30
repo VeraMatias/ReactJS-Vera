@@ -7,10 +7,17 @@
     font-family: 'Raleway', sans-serif;
 }
 
-.checkout-title{
-    text-align: center;
+.container-order{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
 }
 
+.order-id{
+    margin-top: 1rem;
+    color: var(--clr-main-dark);
+}
 .container-checkout{
     display: flex;
     justify-content:space-around;
