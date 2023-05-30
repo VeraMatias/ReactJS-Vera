@@ -8,12 +8,17 @@ import './Checkout.css'
 
 export const Checkout = () => {
 
-    const {cart, removeItem} = useContext(CartContext)
+    const {cart, removeItem, orderID, orderPurchased} = useContext(CartContext)
 
     return(
-        <>    
+        <>  
+        {
+            orderPurchased?
+
+            <h2>Gracias por su compra, su numero de orden es {orderID}</h2>
+            :
             <div className="container-checkout">
-                <CheckoutInfoUser/>
+                <CheckoutInfoUser />
                 <div className="container-checkout-list">
                     <h2>Detalle de tu compra</h2>
                     <div className="list-detail">
@@ -25,6 +30,7 @@ export const Checkout = () => {
                     </div>
                 </div>
             </div>
+        }
         </>
     )
 }

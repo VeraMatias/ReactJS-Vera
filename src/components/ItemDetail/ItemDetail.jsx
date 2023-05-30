@@ -6,7 +6,11 @@ import {CartContext} from '../../context/CartContext'
 import { useContext } from 'react';
 
 const ItemDetail =  ({product}) => {
-    const {addItem} = useContext(CartContext)
+    const {addItem, cart} = useContext(CartContext)
+    let qtyProductInCart = cart.find(item => item.item.id === product.id)?.quantity
+    if (qtyProductInCart === undefined) qtyProductInCart = 0
+    const availableStock = product.stock - qtyProductInCart
+    
     return(
         <>
             <h2 className='product-name'>{product.nombre || <Skeleton/>}</h2>
@@ -19,7 +23,7 @@ const ItemDetail =  ({product}) => {
                         {!product.precio ? <Skeleton width={"10rem"} height={"2rem"}/> : <p className='product-price'>Precio: ${product.precio}</p> }
                     </div>
                     <p className='count-title'>Agregar al carrito</p>
-                    {product.stock === undefined ? <Skeleton height={"2rem"}/> : <ItemCount  initial={0} stock={product.stock} onAdd={(count) => addItem(product,count)}/>}
+                    {product.stock === undefined ? <Skeleton height={"2rem"}/> : <ItemCount  initial={0} stock={availableStock} onAdd={(count) => addItem(product,count)}/>}
                 </div>
             </div>
         </>

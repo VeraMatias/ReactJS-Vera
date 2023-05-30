@@ -8,6 +8,7 @@ export const CheckoutInfoUser = () =>{
     return(
         <div className="container-checkout-user">
         <h2>Información del Usuario</h2>
+        {/*<form onSubmit={handleSubmit()}>*/}
         <form onSubmit={handleSubmit}>
             {inputValues.map(input =>{
                 return(                        

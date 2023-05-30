@@ -8,14 +8,9 @@ export const useCart = () =>{
             setCart(prev => [...prev, {item,quantity}])
         }else{
             const quantityPrev = cart.find(itemPrev => itemPrev.item.id === item.id).quantity
-            if (item.stock >= (quantityPrev + quantity)){
-                removeItem(item.id)
-                quantity += quantityPrev
-                setCart(prev => [...prev, {item,quantity}])
-            }else{
-                console.log(item.stock - quantityPrev)
-                item.stock - quantityPrev > 0 ? alert(`La cantidad sobrepasa el stock actual. Solo puede agregar ${item.stock - quantityPrev} unidades más.`) : alert("No queda Stock disponible")
-            }
+            removeItem(item.id)
+            quantity += quantityPrev
+            setCart(prev => [...prev, {item,quantity}])
         }
     }
 
@@ -44,5 +39,9 @@ export const useCart = () =>{
         return (totalOrder)
     }
 
-    return {cart, addItem, removeItem, clearCart, quantityCart, totalOrder}
+    const [orderID,setOrderID] = useState("")
+
+    const [orderPurchased, setOrderPurchased] = useState(false)
+
+    return {cart, addItem, removeItem, clearCart, quantityCart, totalOrder,orderID,setOrderID, orderPurchased, setOrderPurchased}
 }

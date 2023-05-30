@@ -2,11 +2,10 @@ import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
 import { getFirestore, collection, addDoc, getDocs, query, where, doc, getDoc} from "firebase/firestore"
 
-
 export const useFirestore = () =>{
-    const {cart, totalOrder} = useContext(CartContext)
+    const {cart, totalOrder, setOrderID, setOrderPurchased, clearCart} = useContext(CartContext)
 
-    const sendOrder = (userInfo) =>{
+    const sendOrder = (userInfo,setOrderID,setOrderPurchased) =>{
         const order ={
             buyer: {
                 name: userInfo.username,
@@ -25,7 +24,7 @@ export const useFirestore = () =>{
             date: currentDate(),
             total: totalOrder()
         }
-        saveFirestore("orders", order)
+        saveFirestore("orders", order,setOrderID,setOrderPurchased)
     }
 
     const currentDate =() =>{
@@ -35,14 +34,17 @@ export const useFirestore = () =>{
         var year = today.getFullYear();
         return(`${day}/${month}/${year}`);
     }
-    
 
     const saveFirestore = (nameCollection, order) =>{
         
         const db = getFirestore()
         const orderCollection = collection(db, nameCollection)
 
-        addDoc(orderCollection, order).then(({id}) => alert(`Su orden fue generada a traves del ID ${id}`))
+        addDoc(orderCollection, order).then(({id}) => {
+            setOrderID(id)
+            clearCart()
+            setOrderPurchased(true)
+        })
     }
 
     const getCollection = (nameCategory, setList,all) =>{
