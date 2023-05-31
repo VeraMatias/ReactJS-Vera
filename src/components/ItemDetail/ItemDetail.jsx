@@ -5,14 +5,13 @@ import Skeleton from 'react-loading-skeleton';
 import {CartContext} from '../../context/CartContext'
 import { useContext} from 'react';
 import { useItemProduct } from '../../hooks/useItemProduct';
+import { useItemDetail } from '../../hooks/useItemDetail';
 
 
 const ItemDetail =  ({product}) => {
     const {addItem, cart} = useContext(CartContext)
-    let qtyProductInCart = cart.find(item => item.item.id === product.id)?.quantity
-    if (qtyProductInCart === undefined) qtyProductInCart = 0
-    const availableStock = product.stock - qtyProductInCart
     const {productExist} = useItemProduct()
+    const {availableStock} = useItemDetail()
     
     return(
         <>
@@ -28,7 +27,7 @@ const ItemDetail =  ({product}) => {
                         {!product.precio ? <Skeleton width={"10rem"} height={"2rem"}/> : <p className='product-price'>Precio: ${product.precio}</p> }
                     </div>
                     <p className='count-title'>Agregar al carrito</p>
-                    {product.stock === undefined ? <Skeleton height={"2rem"}/> : <ItemCount  initial={0} stock={availableStock} onAdd={(count) => addItem(product,count)}/>}
+                    {product.stock === undefined ? <Skeleton height={"2rem"}/> : <ItemCount  initial={0} stock={availableStock(product,cart)} onAdd={(count) => addItem(product,count)}/>}
                 </div>
             </div>
             </>
