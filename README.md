@@ -25,11 +25,11 @@ Instalar **[React Loading Skeleton](https://www.npmjs.com/package/react-loading-
 ```
 Instalar **[React Router Dom](https://www.npmjs.com/package/react-router-dom)** la cual es una lbrería encargada de generar rutas dinámicas facilitando la navegabilidad por la página.
 ```
- npm i react-loading-skeleton
+ npm i react-router-dom
 ```
 Instalar **[Firebase](https://firebase.google.com/?hl=es)** la cual es una aplicación de google que nos permite generar una base de datos.
 ```
- npm i react-router-dom
+ npm install firebase
 ```
 ### Como ver el sitio en tu PC
 
