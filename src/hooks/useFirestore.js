@@ -5,6 +5,8 @@ import { getFirestore, collection, addDoc, getDocs, query, where, doc, getDoc} f
 export const useFirestore = () =>{
     const {cart, totalOrder, setOrderID, setOrderPurchased, clearCart} = useContext(CartContext)
 
+
+
     const sendOrder = (userInfo,setOrderID,setOrderPurchased) =>{
         const order ={
             buyer: {
@@ -82,15 +84,18 @@ export const useFirestore = () =>{
         }
     }
 
-    const getDocument = (productID, setItemProduct) =>{
+    const getDocument = (productID, setItemProduct,setProductExist) =>{
         const db = getFirestore()
 
         const q = doc(db,"items",productID)
         getDoc(q).then((snapshot) =>{
-            snapshot === 0 ?
+            if(snapshot.data()?.nombre === undefined){      
                 setItemProduct([])
-            :
+                setProductExist(false)
+            }else{
                 setItemProduct({id: snapshot.id, ...snapshot.data()})
+                setProductExist(true)
+            }
         })
     }
 

@@ -3,7 +3,6 @@ import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import { useItemProduct } from "../../hooks/useItemProduct";
 
 const ItemDetailContainer =  () => {
-
     const {itemProduct} = useItemProduct(products)
 
     return(

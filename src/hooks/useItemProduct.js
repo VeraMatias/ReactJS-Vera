@@ -6,6 +6,7 @@ export const useItemProduct = (products) =>{
 
     //Creacion del estado
     const [itemProduct, setItemProduct] = useState([]);
+    const [productExist,setProductExist] = useState(true)
 
     //Obtencion de paraametro URL
     const {itemID} =useParams()
@@ -14,8 +15,8 @@ export const useItemProduct = (products) =>{
     const {getDocument} = useFirestore()
 
     useEffect(() => {
-        getDocument(itemID, setItemProduct)
+        getDocument(itemID, setItemProduct,setProductExist)
     }, [itemID]);
 
-    return {itemProduct}
+    return {itemProduct,productExist}
 }

@@ -3,17 +3,20 @@ import './ItemDetail.css';
 import ItemCount from '../../components/ItemCount/ItemCount';
 import Skeleton from 'react-loading-skeleton';
 import {CartContext} from '../../context/CartContext'
-import { useContext } from 'react';
+import { useContext} from 'react';
+import { useItemProduct } from '../../hooks/useItemProduct';
+
 
 const ItemDetail =  ({product}) => {
     const {addItem, cart} = useContext(CartContext)
     let qtyProductInCart = cart.find(item => item.item.id === product.id)?.quantity
     if (qtyProductInCart === undefined) qtyProductInCart = 0
     const availableStock = product.stock - qtyProductInCart
+    const {productExist} = useItemProduct()
     
     return(
         <>
-        {!product.nombre ? <h2 className='text-nonexist'>Producto Inexistente</h2> :
+        {!productExist ? <h2 className='text-nonexist'>Producto Inexistente</h2> :
             <>
             <h2 className='product-name'>{product.nombre || <Skeleton/>}</h2>
             <div className="container-details">
@@ -32,6 +35,7 @@ const ItemDetail =  ({product}) => {
         }
         </>
     )
+    
 }
 export default ItemDetail
 
