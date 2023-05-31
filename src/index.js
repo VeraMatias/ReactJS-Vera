@@ -11,7 +11,8 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCN3lKvMrBafrtcNhd5RbBI1OB8e6NyOck",
+  // apiKey: "AIzaSyCN3lKvMrBafrtcNhd5RbBI1OB8e6NyOck",
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "habia-una-vez-fb162-923ca.firebaseapp.com",
   projectId: "habia-una-vez-fb162",
   storageBucket: "habia-una-vez-fb162.appspot.com",
