@@ -13,7 +13,7 @@ export const Cart = () =>{
         return(   
             <div className="container-no-product">
                 <h2 className="title">¡Tu carrito esta vacio!</h2>
-                <Link to={"/category/*"} className={"btn-products"}>Comprar Ahora </Link>
+                <Link to={"/"} className={"btn-products"}>Comprar Ahora </Link>
             </div>
         )
     }else{
