@@ -70,3 +70,24 @@
 .count-stock{
     margin-top: 1rem;
 }
+
+.btn-finish{
+    background-color: var(--clr-main-dark);
+    width: 100%;
+    padding: .6rem;
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    margin-top: 2rem;
+    border-radius: .75rem;
+    border-color: var(--clr-main-dark);
+    border-style: solid;
+    text-transform: uppercase;
+    color: var(--clr-gray);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-finish:hover{
+    background-color: var(--clr-main);
+    border-color: var(--clr-main);
+}

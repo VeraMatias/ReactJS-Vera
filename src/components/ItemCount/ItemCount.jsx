@@ -1,17 +1,11 @@
-import { useState } from "react"
-
 import './ItemCount.css';
 
-const ItemCount =  ({initial, stock, onAdd}) => {
-    const [counter, setCounter] = useState(initial);
-    
-    const handlerDecrease = () => {
-        if (counter > 0){ setCounter ( counter - 1);}
-    }
+import { Link } from "react-router-dom"
+import { useItemCount } from '../../hooks/useItemCount';
 
-    const handlerIncrease = () => {
-        if (counter < stock){ setCounter ( counter + 1);}
-    }
+const ItemCount =  ({initial, stock, onAdd}) => {
+
+    const {counter,showButtonBuy,setShowButtonBuy,handlerDecrease,handlerIncrease} = useItemCount({initial,stock})
 
     return(
         <>
@@ -21,9 +15,10 @@ const ItemCount =  ({initial, stock, onAdd}) => {
                 <h4 className="controls-number">{counter}</h4>
                 <button onClick={handlerIncrease}  className="controls-btn">+</button>
             </div>
-            <button className="count-add" onClick={() => onAdd(counter)} disabled={!stock || counter===0 || counter > stock}>Agregar al Carrito</button>
+            <button className="count-add" onClick={() => {onAdd(counter); setShowButtonBuy(true)}} disabled={!stock || counter===0 || counter > stock}>Agregar al Carrito</button>
         </div>
         <p className="count-stock">Stock disponible: {stock} </p>
+        {showButtonBuy && <Link to={"/cart"}><button className="btn-finish">Comprar Ahora</button></Link>}
         </>
 
     )

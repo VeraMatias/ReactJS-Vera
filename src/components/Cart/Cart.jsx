@@ -1,7 +1,7 @@
+import './Cart.css'
+
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
-
-import './Cart.css'
 import { ItemCart } from "../ItemCart/ItemCart"
 import { ActionsCart } from "../ActionsCart/ActionsCart"
 import { Link } from "react-router-dom"

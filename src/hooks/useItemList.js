@@ -2,8 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { useFirestore } from "./useFirestore";
 
-export const useItemList = (products) =>{
-
+export const useItemList = () =>{
     //Creacion del estado
     const [itemList, setItemList] = useState([]);
 
@@ -23,5 +22,4 @@ export const useItemList = (products) =>{
     },[categoryID])
 
     return {itemList}
-
 }

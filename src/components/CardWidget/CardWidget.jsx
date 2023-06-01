@@ -1,5 +1,6 @@
-import cart from './assets/carrito.png'
 import './CardWidget.css';
+
+import cart from './assets/carrito.png'
 
 const CardWidget =  ({counterCart}) => {
     return(

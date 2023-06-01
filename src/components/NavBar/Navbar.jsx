@@ -1,17 +1,15 @@
+import './NavBar.css';
+
 import { Link, NavLink } from "react-router-dom";
 import CardWidget from "../CardWidget/CardWidget"
-import './NavBar.css';
 import logo from './assets/logo.png'
-
 import {CartContext} from '../../context/CartContext'
 import { useContext } from 'react';
 
 const NavBar =  () => {
-
     const {quantityCart} = useContext(CartContext)
 
     return(
-
         <header>
             <div className="logos">
                 <img className="logos-image" src = {logo} alt="Habia Una Vez Logo" />
@@ -29,7 +27,6 @@ const NavBar =  () => {
                 <Link to={"/cart"}>
                     {quantityCart() > 0 &&  <CardWidget counterCart = {quantityCart()}/>}
                 </Link>
-                
             </nav>
         </header>
     )

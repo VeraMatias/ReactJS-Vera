@@ -1,9 +1,8 @@
-import products from '../../data/productos.json'
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import { useItemProduct } from "../../hooks/useItemProduct";
 
 const ItemDetailContainer =  () => {
-    const {itemProduct} = useItemProduct(products)
+    const {itemProduct} = useItemProduct()
 
     return(
         <ItemDetail product = {itemProduct} />

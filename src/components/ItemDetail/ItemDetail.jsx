@@ -7,7 +7,6 @@ import { useContext} from 'react';
 import { useItemProduct } from '../../hooks/useItemProduct';
 import { useItemDetail } from '../../hooks/useItemDetail';
 
-
 const ItemDetail =  ({product}) => {
     const {addItem, cart} = useContext(CartContext)
     const {productExist} = useItemProduct()
@@ -15,7 +14,9 @@ const ItemDetail =  ({product}) => {
     
     return(
         <>
-        {!productExist ? <h2 className='text-nonexist'>Producto Inexistente</h2> :
+        {!productExist ? 
+            <h2 className='text-nonexist'>Producto Inexistente</h2> 
+        :
             <>
             <h2 className='product-name'>{product.nombre || <Skeleton/>}</h2>
             <div className="container-details">

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 export const ActionsCart = ({total, clear}) =>{
     return(
-        <div className="cart-actions">
+    <div className="cart-actions">
         <div className="cart-actions-left">
             <button className="btn-clear" onClick={() => clear()}>Vaciar carrito</button>
         </div>

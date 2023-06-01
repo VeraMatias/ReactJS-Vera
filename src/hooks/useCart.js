@@ -2,6 +2,8 @@ import { useState } from "react"
 
 export const useCart = () =>{
     const [cart, setCart] = useState([])
+    const [orderID,setOrderID] = useState("")
+    const [orderPurchased, setOrderPurchased] = useState(false)
 
     const addItem = (item, quantity) =>{
         if(!isInCart(item.id)){
@@ -38,10 +40,6 @@ export const useCart = () =>{
         cart.forEach(item => totalOrder += item.quantity * item.item.precio)
         return (totalOrder)
     }
-
-    const [orderID,setOrderID] = useState("")
-
-    const [orderPurchased, setOrderPurchased] = useState(false)
 
     return {cart, addItem, removeItem, clearCart, quantityCart, totalOrder,orderID,setOrderID, orderPurchased, setOrderPurchased}
 }

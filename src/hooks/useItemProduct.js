@@ -2,8 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { useFirestore } from "./useFirestore";
 
-export const useItemProduct = (products) =>{
-
+export const useItemProduct = () =>{
     //Creacion del estado
     const [itemProduct, setItemProduct] = useState([]);
     const [productExist,setProductExist] = useState(true)
